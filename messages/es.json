@@ -16,5 +16,14 @@
   "SpeakersPage": {
     "title": "Ponentes",
     "description": "Quién habla en React Alicante, y cuándo."
+  },
+  "SessionLevel": {
+    "beginner": "Principiante",
+    "intermediate": "Intermedio",
+    "advanced": "Avanzado"
+  },
+  "SessionMeta": {
+    "trackLabel": "Pista",
+    "levelLabel": "Nivel"
   }
 }
