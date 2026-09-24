@@ -29,8 +29,10 @@ export default async function SessionDetailPage({
     notFound();
   }
 
-  const tLevel = await getTranslations("SessionLevel");
-  const tMeta = await getTranslations("SessionMeta");
+  const [tLevel, tMeta] = await Promise.all([
+    getTranslations("SessionLevel"),
+    getTranslations("SessionMeta"),
+  ]);
 
   return (
     <Flex direction="column" gap="6" flex="1" width="full">
