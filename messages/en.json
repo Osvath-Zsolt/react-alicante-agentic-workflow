@@ -16,5 +16,14 @@
   "SpeakersPage": {
     "title": "Speakers",
     "description": "Who is speaking at React Alicante, and when."
+  },
+  "SessionLevel": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "SessionMeta": {
+    "trackLabel": "Track",
+    "levelLabel": "Level"
   }
 }

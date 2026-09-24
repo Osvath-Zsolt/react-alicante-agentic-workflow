@@ -1,8 +1,8 @@
 import { Badge } from "@/components/atoms/badge";
 import { Link } from "@/i18n/navigation";
 import { fetchSessionById, fetchSessions } from "@/services/sessions";
-import { formatLevel } from "@/utils/session-level";
 import { Flex, Heading, Text } from "@chakra-ui/react";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -29,6 +29,9 @@ export default async function SessionDetailPage({
     notFound();
   }
 
+  const tLevel = await getTranslations("SessionLevel");
+  const tMeta = await getTranslations("SessionMeta");
+
   return (
     <Flex direction="column" gap="6" flex="1" width="full">
       <Link href="/sessions">
@@ -44,8 +47,22 @@ export default async function SessionDetailPage({
 
       <Flex direction="column" gap="3">
         <Flex align="center" gap="3">
-          <Badge>{session.track}</Badge>
-          <Badge variant="outline">{formatLevel(session.level)}</Badge>
+          <Badge>
+            {/* Two adjacent badges with no visible label read as one
+                undifferentiated string to a screen reader ("React,
+                Intermediate"); this sr-only prefix makes each badge's
+                own meaning explicit without changing how it looks. */}
+            <Text as="span" srOnly>
+              {tMeta("trackLabel")}:{" "}
+            </Text>
+            {session.track}
+          </Badge>
+          <Badge variant="outline">
+            <Text as="span" srOnly>
+              {tMeta("levelLabel")}:{" "}
+            </Text>
+            {tLevel(session.level)}
+          </Badge>
           <Text fontSize="sm" color="var(--text-muted)">
             {session.startTime} · {session.durationMinutes} min · {session.room}
           </Text>
