@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.4.0] — 2026-09-24
+
+### Features
+
+- Add Speakers page
+- Add session_level enum and level column
+- Expose level through the data layer
+- Show each session's level in the UI
+
+### Bug Fixes
+
+- Address accessibility audit findings (speakers)
+- Address accessibility audit findings on session level
+
+### Tests
+
+- Add tests for grouping util and SpeakerCard
+- Cover the level badge on the session detail page
+- Cover every session_level value, parallelize lookups
+
+### Maintenance
+
+- Regenerate supabase types for session_level
+
+## Test Suite
+
+| Suite          | Status     |
+| -------------- | ---------- |
+| ESLint         | ⏳ pending |
+| Type-check     | ⏳ pending |
+| Unit tests     | ⏳ pending |
+| Build (Vercel) | ⏳ pending |
+
+CI: pending — release-0-4-0 not yet pushed
+
 ## [0.3.1] — 2026-09-24
 
 ### Bug Fixes

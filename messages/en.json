@@ -4,6 +4,7 @@
     "schedule": "Schedule",
     "stats": "Stats",
     "news": "News",
+    "speakers": "Speakers",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -11,5 +12,18 @@
     "heading": "React Alicante Conference Companion",
     "line1": "Your schedule, your sessions —",
     "line2": "one place"
+  },
+  "SpeakersPage": {
+    "title": "Speakers",
+    "description": "Who is speaking at React Alicante, and when."
+  },
+  "SessionLevel": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "SessionMeta": {
+    "trackLabel": "Track",
+    "levelLabel": "Level"
   }
 }
